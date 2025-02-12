@@ -16,16 +16,9 @@ lspconfig.rust_analyzer.setup({
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.rs",
-  callback = function()
-    vim.lsp.buf.format({ async = true })
-  end,
-})
-
 lspconfig.ts_ls.setup({
   on_attach = function(client, bufnr)
-    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = true
   end,
   filetypes = { "javascript",  "typescript" },
   cmd = { "typescript-language-server", "--stdio" },
@@ -37,4 +30,11 @@ lspconfig.intelephense.setup({
   end,
   filetypes = { "php" },
   cmd = { "intelephense", "--stdio" },
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.rs, *.js", "*.ts", "*.php" },
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
 })
