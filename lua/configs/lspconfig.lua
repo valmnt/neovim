@@ -22,3 +22,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ async = true })
   end,
 })
+
+lspconfig.ts_ls.setup({
+  on_attach = function(client, bufnr)
+    client.server_capabilities.document_formatting = false
+  end,
+  filetypes = { "javascript",  "typescript" },
+  cmd = { "typescript-language-server", "--stdio" },
+})
+
+lspconfig.intelephense.setup({
+  on_attach = function(client, bufnr)
+    client.server_capabilities.document_formatting = true
+  end,
+  filetypes = { "php" },
+  cmd = { "intelephense", "--stdio" },
+})
