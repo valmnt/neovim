@@ -20,7 +20,7 @@ lspconfig.ts_ls.setup({
   on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = true
   end,
-  filetypes = { "javascript",  "typescript" },
+  filetypes = { "javascript",  "typescript", "vue" },
   cmd = { "typescript-language-server", "--stdio" },
 })
 
