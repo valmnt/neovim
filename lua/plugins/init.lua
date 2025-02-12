@@ -10,10 +10,6 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    lazy = false,
-  },
-  {
     'williamboman/mason.nvim',
   },
   {
