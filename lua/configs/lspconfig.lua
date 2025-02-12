@@ -1,16 +1,6 @@
 local lspconfig = require("lspconfig")
 
 lspconfig.rust_analyzer.setup({
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        loadOutDirsFromCheck = true,
-      },
-      procMacro = {
-        enable = true,
-      },
-    },
-  },
   on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = true
   end,
