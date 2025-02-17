@@ -5,10 +5,6 @@ M.base46 = {
     theme = "gatekeeper",
 }
 
-M.ui = {
-    tabufline = {
-        enabled = false,
-    },
-}
+M.ui = {}
 
 return M
