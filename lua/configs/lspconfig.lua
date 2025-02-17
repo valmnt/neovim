@@ -1,30 +1,22 @@
 local lspconfig = require "lspconfig"
 
+local on_attach = function(client, bufnr)
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
+end
+
 lspconfig.rust_analyzer.setup {
-    on_attach = function(client, bufnr)
-        client.server_capabilities.document_formatting = true
-    end,
+    on_attach = on_attach,
 }
 
 lspconfig.ts_ls.setup {
-    on_attach = function(client, bufnr)
-        client.server_capabilities.document_formatting = true
-    end,
+    on_attach = on_attach,
     filetypes = { "javascript", "typescript", "vue" },
     cmd = { "typescript-language-server", "--stdio" },
 }
 
 lspconfig.intelephense.setup {
-    on_attach = function(client, bufnr)
-        client.server_capabilities.document_formatting = true
-    end,
+    on_attach = on_attach,
     filetypes = { "php" },
     cmd = { "intelephense", "--stdio" },
 }
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = { "*.rs, *.js", "*.ts", "*.php" },
-    callback = function()
-        vim.lsp.buf.format { async = false }
-    end,
-})
