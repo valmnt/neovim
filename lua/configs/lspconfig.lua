@@ -11,12 +11,8 @@ lspconfig.rust_analyzer.setup {
 
 lspconfig.ts_ls.setup {
     on_attach = on_attach,
-    filetypes = { "javascript", "typescript", "vue" },
-    cmd = { "typescript-language-server", "--stdio" },
 }
 
 lspconfig.intelephense.setup {
     on_attach = on_attach,
-    filetypes = { "php" },
-    cmd = { "intelephense", "--stdio" },
 }
