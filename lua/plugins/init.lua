@@ -1,12 +1,14 @@
 return {
     {
         "stevearc/conform.nvim",
-        opts = require "configs.conform",
+        config = function()
+            require("configs.conform").setup()
+        end,
     },
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require "configs.lspconfig"
+            require("configs.lspconfig").setup()
         end,
     },
     {
@@ -18,7 +20,7 @@ return {
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require "configs.null-ls"
+            require("configs.null-ls").setup()
         end,
     },
     {
