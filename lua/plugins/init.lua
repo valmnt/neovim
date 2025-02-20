@@ -36,4 +36,14 @@ return {
             require("configs.gitsigns").setup()
         end,
     },
+    {
+        "kdheepak/lazygit.nvim",
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+    },
 }
