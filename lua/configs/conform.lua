@@ -8,7 +8,7 @@ M.setup = function()
             javascript = { "prettier" },
             typescript = { "prettier" },
             vue = { "prettier" },
-            php = { "php-cs-fixer" },
+            php = { "php_cs_fixer" },
             lua = { "stylua" },
         },
         require_installed = true,
