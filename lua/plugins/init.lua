@@ -30,4 +30,10 @@ return {
             require("git-conflict").setup()
         end,
     },
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("configs.gitsigns").setup()
+        end,
+    },
 }
