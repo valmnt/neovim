@@ -12,6 +12,12 @@ return {
         end,
     },
     {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("configs.treesitter").setup()
+        end,
+    },
+    {
         "numToStr/Comment.nvim",
         config = function()
             require("Comment").setup()
