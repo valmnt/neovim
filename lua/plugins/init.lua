@@ -52,4 +52,8 @@ return {
             "LazyGitFilterCurrentFile",
         },
     },
+    {
+        "Exafunction/windsurf.vim",
+        event = "BufEnter",
+    },
 }
